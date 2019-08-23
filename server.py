@@ -10,10 +10,6 @@ class MyServer(tornado.web.RequestHandler):
         self.write(str(data))
     
     def put(self):
-        #gendercount = str(self.request.body)
-        #gender,count = gendercount.split(' ')
-        #gender = int(gender)
-        #count = int(count)
         gender, count = [int(x) for x in self.request.body.split()]   
         with open("data.json",'r') as MyJson:
             data = json.load(MyJson)
